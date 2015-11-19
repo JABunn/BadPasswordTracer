@@ -322,7 +322,7 @@ namespace Event_Query
         private void queryEvents_Button_Click(object sender, EventArgs e)
         {
             string query = get_Query();
-            // Console.WriteLine(query);
+            Console.WriteLine(query);
             if (query.Equals(""))
             {
                 return;
@@ -568,7 +568,7 @@ namespace Event_Query
             string username_time = "";
             if (!username.Equals("*"))
             {
-                username_time = username_time + "[EventData[Data[@Name='TargetUserName']='" + username + "']]";
+                username_time = username_time + "*/EventData[Data[@Name='TargetUserName']='" + username + "'] and ";
             }
             if (username.Equals(""))
             {
@@ -583,7 +583,7 @@ namespace Event_Query
                 if (parsed)
                 {
                     TimeSpan QueryTime = TimeSpan.FromHours(hours);
-                    username_time = username_time + " and [System/TimeCreated[timediff(@SystemTime) <= '" + QueryTime.TotalMilliseconds.ToString() + "']]";
+                    username_time = username_time + "*/System/TimeCreated[timediff(@SystemTime) <= '" + QueryTime.TotalMilliseconds.ToString() + "'] and ";
                 }
                 else
                 {
@@ -600,7 +600,7 @@ namespace Event_Query
             string query = "";
             foreach(string id_str in eventIDs)
             {
-                query = query + id_str + username_time + " or ";
+                query = query + username_time + id_str + " or ";
             }
             return query.Substring(0, (query.Length - 4));
         }
