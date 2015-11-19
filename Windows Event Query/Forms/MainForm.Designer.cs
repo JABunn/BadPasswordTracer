@@ -58,6 +58,7 @@
             this.IpAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.QueryComputerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Workstation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -302,6 +303,7 @@
             this.Count,
             this.TargetUserName,
             this.IpAddress,
+            this.Workstation,
             this.Status,
             this.QueryComputerName});
             this.eventsListView.FullRowSelect = true;
@@ -338,12 +340,17 @@
             // Status
             // 
             this.Status.Text = "Status";
-            this.Status.Width = 48;
+            this.Status.Width = 53;
             // 
             // QueryComputerName
             // 
             this.QueryComputerName.Text = "QueryComputerName";
             this.QueryComputerName.Width = 117;
+            // 
+            // Workstation
+            // 
+            this.Workstation.Text = "Workstation";
+            this.Workstation.Width = 75;
             // 
             // MainForm
             // 
@@ -404,6 +411,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addRemoveColumnsToolStripMenuItem1;
+        private System.Windows.Forms.ColumnHeader Workstation;
     }
 }
 
