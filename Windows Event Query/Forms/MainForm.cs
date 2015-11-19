@@ -322,7 +322,7 @@ namespace Event_Query
         private void queryEvents_Button_Click(object sender, EventArgs e)
         {
             string query = get_Query();
-            Console.WriteLine(query);
+            // Console.WriteLine(query);
             if (query.Equals(""))
             {
                 return;
@@ -592,9 +592,9 @@ namespace Event_Query
                 }
             }
 
-
             string evt_4771 = "*/System[EventID=4771] and */EventData[Data[@Name='Status']='0x18']";
             string evt_4776 = "*/System[EventID=4776] and */EventData[Data[@Name='Status']='C000006A']";
+            //string evt_4624 = "*/System[EventID=4624]";
             //string evt_4740 = "*/System[EventID=4740]";
             string[] eventIDs = { evt_4771, evt_4776 };
             string query = "";
